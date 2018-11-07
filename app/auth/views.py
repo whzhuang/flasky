@@ -117,8 +117,11 @@ def password_reset_request():
             token = user.generate_reset_token()
             send_email(user.email, 'Reset Your Password',
                        'auth/email/reset_password',
+<<<<<<< HEAD
                        user=user, token=token,
                        next=request.args.get('next'))
+=======
+>>>>>>> 83d3614e9ff9fc8289758030d782542a77942cff
         flash('An email with instructions to reset your password has been '
               'sent to you.')
         return redirect(url_for('auth.login'))
